@@ -1,0 +1,175 @@
+//Query nro 1: retorna el nombre, origen, nombre de la raza y edad de las mascotas que tengan menos de 3 años de edad
+
+db.Mascotas.aggregate([
+  {
+    $lookup: {
+      from: "Razas_Mascotas",
+      localField: "id_mascota",
+      foreignField: "id_mascota",
+      as: "raza"
+    }
+  },
+  {
+    $unwind: "$raza"
+  },
+  {
+    $match: {
+      edad: { $lt: 3 }
+    }
+  },
+  {
+    $project: {
+      nombre: 1,
+      origen: 1,
+      nombre_raza: "$raza.nombre_raza",
+      edad: 1
+    }
+  }
+])
+
+
+
+//Query nro 2: retorna la cantidad de mascotas por especie
+
+db.Especies_Mascotas.aggregate([
+  {
+    $group: {
+      _id: "$nombre_especie",
+      cantidad: { $sum: 1 }
+    }
+  },
+  {
+    $project: {
+      nombre_especie: "$_id",
+      cantidad: 1,
+      _id: 0
+    }
+  }
+])
+
+
+//Query Nro 3
+
+
+//Inserción de datos 
+
+
+db.Razas_Mascotas.insertMany([
+   {
+      id_raza: 111, id_mascota: 1, nombre_raza: 'schnauzer'
+   },
+   {
+      id_raza: 112, id_mascota: 2, nombre_raza: 'schnauzer'
+   },
+   {
+      id_raza: 113, id_mascota: 3, nombre_raza: 'Cocker'
+   },
+   {
+      id_raza: 114, id_mascota: 4, nombre_raza: 'schnauzer'
+   },
+   {
+      id_raza: 115, id_mascota: 5, nombre_raza: 'Mestizo'
+   },
+   {
+      id_raza: 116, id_mascota: 6, nombre_raza: 'Mestizo'
+   },
+   {
+      id_raza: 117, id_mascota: 7, nombre_raza: 'Pug'
+   },
+   {
+      id_raza: 118, id_mascota: 8, nombre_raza: 'Mestizo'
+   },
+   {
+      id_raza: 119, id_mascota: 9, nombre_raza: 'Labrador'
+   },
+   {
+      id_raza: 120, id_mascota: 10, nombre_raza: 'Caniche'
+   }
+])
+
+
+db.Especies_Mascotas.insertMany([
+   {
+      id_especie: 101, id_mascota: 1, nombre_especie: 'Perro'
+   },
+
+   {
+      id_especie: 102, id_mascota: 2, nombre_especie: 'loro'
+   },
+
+   {
+      id_especie: 103, id_mascota: 3, nombre_especie: 'Perro'
+   },
+
+   {
+      id_especie: 104, id_mascota: 4, nombre_especie: 'loro'
+   },
+
+   {
+      id_especie: 105, id_mascota: 5, nombre_especie: 'Perro'
+   },
+
+   {
+      id_especie: 106, id_mascota: 6, nombre_especie: 'gato'
+   },
+
+   {
+      id_especie: 107, id_mascota: 7, nombre_especie: 'Perro'
+   },
+
+   {
+      id_especie: 108, id_mascota: 8, nombre_especie: 'Perro'
+   },
+
+   {
+      id_especie: 109, id_mascota: 9, nombre_especie: 'gato'
+   },
+
+   {
+      id_especie: 110, id_mascota: 10, nombre_especie: 'gato'
+   }
+])
+
+
+
+db.Mascotas.insertMany([
+   {
+      id_mascota: 1, id_usuario: 11, nombre: 'Bobby', origen: 'Trujillo', edad: 5, descripcion: 'Jugueton', imagen: 1010
+   },
+
+   { 
+      id_mascota: 2,id_usuario: 12, nombre: 'Van Gogh',origen: 'Tarapoto', edad: 1, descripcion: 'Cariñoso', imagen: 1010
+   },
+
+   {
+      id_mascota: 3, id_usuario: 13, nombre: 'Rex', origen: 'Jauja', edad: 3, descripcion: 'Desconfiado', imagen: 1010
+   },
+
+   {
+      id_mascota: 4, id_usuario: 14, nombre: 'Lucifer', origen: 'Lima', edad: 7, descripcion: 'Calmado', imagen: 1010
+   },
+
+   {
+      id_mascota: 5, id_usuario: 15, nombre: 'Ramon', origen: 'Lima', edad: 2, descripcion: 'Cariñoso', imagen: 1010
+   },
+
+   {
+      id_mascota: 6, id_usuario: 16, nombre: 'Rita', origen: 'Huancavelica', edad: 1, descripcion: 'Jugueton', imagen: 1010
+   },
+
+   {
+      id_mascota: 7, id_usuario: 17, nombre: 'Max', origen: 'Chiclayo', edad: 6, descripcion: 'Activo', imagen: 1010
+   },
+
+   {
+      id_mascota: 8, id_usuario: 18, nombre: 'Tulio', origen: 'Lima', edad: 3, descripcion: 'Jugueton', imagen: 1010
+   },
+
+   {
+      id_mascota: 9, id_usuario: 19, nombre: 'Sirius', origen: 'Piura', edad: 1, descripcion: 'Activo', imagen: 1010
+   },
+
+   {  
+      id_mascota: 10, id_usuario: 20, nombre: 'Draco', origen: 'Chiclayo', edad: 5, descripcion: 'Calmado', imagen: 1010
+   }
+])
