@@ -12,12 +12,90 @@ db.Usuarios.insertMany([
         "correo": "josehp@gamil.com", 
         "numero_telefonico": 987654321, 
         "contraseña": "aegnboawd_13!", 
-        "mascotas": [
-            { "id_mascota": 1},{ "id_mascota": 2,},{"id_mascota": 3,}
-        ],
+        "direccion": [
+            {
+                "distrito": "Santa Cruz de Andamarca", 
+                "provincia": "Barranca", 
+                "departamento": "Lima", 
+                "mas_detalles": "Jirón Las Palmeras 789, Yurimaguas"
+            },
+            {
+                "distrito": "Pebas", 
+                "provincia": "Mariscal Ramón Castilla", 
+                "departamento": "Loreto", 
+                "mas_detalles": "Calle Los Tucanes 123, Santa Rosa"
+            },
+            {
+                "distrito": "Challabamba", 
+                "provincia": "Paucartambo", 
+                "departamento": "Cusco", 
+                "mas_detalles": "Calle Progreso 234, Requena"
+            }
+        ], 
+        
         "roles": [
-            { "id_rol": 1},{ "id_rol": 4}
-        ]
+            "Adoptante", "Dueño Previo","ONG"
+        ],
+
+        "solicitudes": [
+            {
+                "id_solicitud":"01",
+                "fecha_solicitud":ISODate("2021-06-15T09:30:00Z"),
+                "formulario":
+                    [{
+                        "preguntas": "¿Está usted familiarizado con las responsabilidades de cuidar a una mascota?",
+                        "respuestas": "Sí, he investigado y comprendo las responsabilidades necesarias para cuidar a una mascota."
+                    },
+                    {  
+                        "preguntas": "¿Tiene usted un espacio adecuado para proporcionar un entorno seguro y cómodo para la mascota?",
+                        "respuestas": "Sí, cuento con un hogar espacioso y seguro donde la mascota pueda vivir cómodamente."
+
+                    },
+                    {
+                        "preguntas": "¿Está dispuesto a comprometerse con los cuidados veterinarios necesarios, como vacunaciones y chequeos regulares?",
+                        "respuestas": "Sí, estoy comprometido a brindar los cuidados veterinarios necesarios para mantener a la mascota sana y feliz."
+                    }],
+                "estado":"Aprobado"
+            },
+            {
+                "id_solicitud":"02",
+                "fecha_solicitud":ISODate("2022-06-15T09:30:00Z"),
+                "formulario":
+                    [{
+                        "preguntas": "¿Está usted familiarizado con las responsabilidades de cuidar a una mascota?",
+                        "respuestas": "Sí, he investigado y comprendo las responsabilidades necesarias para cuidar a una mascota."
+                    },
+                    {  
+                        "preguntas": "¿Tiene usted un espacio adecuado para proporcionar un entorno seguro y cómodo para la mascota?",
+                        "respuestas": "Sí, cuento con un hogar espacioso y seguro donde la mascota pueda vivir cómodamente."
+
+                    },
+                    {
+                        "preguntas": "¿Está dispuesto a comprometerse con los cuidados veterinarios necesarios, como vacunaciones y chequeos regulares?",
+                        "respuestas": "Sí, estoy comprometido a brindar los cuidados veterinarios necesarios para mantener a la mascota sana y feliz."
+                    }],
+                "estado":"Aprobado"
+            },
+            {
+                "id_solicitud":"03",
+                "fecha_solicitud":ISODate("2023-06-15T09:30:00Z"),
+                "formulario":
+                    [{
+                        "preguntas": "¿Está usted familiarizado con las responsabilidades de cuidar a una mascota?",
+                        "respuestas": "Sí, he investigado y comprendo las responsabilidades necesarias para cuidar a una mascota."
+                    },
+                    {  
+                        "preguntas": "¿Tiene usted un espacio adecuado para proporcionar un entorno seguro y cómodo para la mascota?",
+                        "respuestas": "Sí, cuento con un hogar espacioso y seguro donde la mascota pueda vivir cómodamente."
+
+                    },
+                    {
+                        "preguntas": "¿Está dispuesto a comprometerse con los cuidados veterinarios necesarios, como vacunaciones y chequeos regulares?",
+                        "respuestas": "Sí, estoy comprometido a brindar los cuidados veterinarios necesarios para mantener a la mascota sana y feliz."
+                    }], 
+                "estado":"Pendiente"
+            },
+        ],
     },
     {
         "id_usuario": 2, 
@@ -28,12 +106,90 @@ db.Usuarios.insertMany([
         "correo": "randy12@gamil.com", 
         "numero_telefonico": 987654322, 
         "contraseña": "aegaegmu896=", 
-        "mascotas": [
-            { "id_mascota": 1},{ "id_mascota": 2,},{"id_mascota": 3,}
+        "direccion": [
+            {
+                "distrito": "Santa Cruz de Andamarca", 
+                "provincia": "Barranca", 
+                "departamento": "Lima", 
+                "mas_detalles": "Jirón Las Palmeras 789, Yurimaguas"
+            },
+            {
+                "distrito": "Pebas", 
+                "provincia": "Mariscal Ramón Castilla", 
+                "departamento": "Loreto", 
+                "mas_detalles": "Calle Los Tucanes 123, Santa Rosa"
+            },
+            {
+                "distrito": "Challabamba", 
+                "provincia": "Paucartambo", 
+                "departamento": "Cusco", 
+                "mas_detalles": "Calle Progreso 234, Requena"
+            }
         ], 
+        
         "roles": [
-            { "id_rol": 1},{ "id_rol": 4}
-        ]
+            "Adoptante", "Dueño Previo","ONG"
+        ],
+
+        "solicitudes": [
+            {
+                "id_solicitud":"01",
+                "fecha_solicitud":ISODate("2021-06-15T09:30:00Z"),
+                "formulario":
+                    [{
+                        "preguntas": "¿Está usted familiarizado con las responsabilidades de cuidar a una mascota?",
+                        "respuestas": "Sí, he investigado y comprendo las responsabilidades necesarias para cuidar a una mascota."
+                    },
+                    {  
+                        "preguntas": "¿Tiene usted un espacio adecuado para proporcionar un entorno seguro y cómodo para la mascota?",
+                        "respuestas": "Sí, cuento con un hogar espacioso y seguro donde la mascota pueda vivir cómodamente."
+
+                    },
+                    {
+                        "preguntas": "¿Está dispuesto a comprometerse con los cuidados veterinarios necesarios, como vacunaciones y chequeos regulares?",
+                        "respuestas": "Sí, estoy comprometido a brindar los cuidados veterinarios necesarios para mantener a la mascota sana y feliz."
+                    }],
+                "estado":"Aprobado"
+            },
+            {
+                "id_solicitud":"02",
+                "fecha_solicitud":ISODate("2022-06-15T09:30:00Z"),
+                "formulario":
+                    [{
+                        "preguntas": "¿Está usted familiarizado con las responsabilidades de cuidar a una mascota?",
+                        "respuestas": "Sí, he investigado y comprendo las responsabilidades necesarias para cuidar a una mascota."
+                    },
+                    {  
+                        "preguntas": "¿Tiene usted un espacio adecuado para proporcionar un entorno seguro y cómodo para la mascota?",
+                        "respuestas": "Sí, cuento con un hogar espacioso y seguro donde la mascota pueda vivir cómodamente."
+
+                    },
+                    {
+                        "preguntas": "¿Está dispuesto a comprometerse con los cuidados veterinarios necesarios, como vacunaciones y chequeos regulares?",
+                        "respuestas": "Sí, estoy comprometido a brindar los cuidados veterinarios necesarios para mantener a la mascota sana y feliz."
+                    }],
+                "estado":"Aprobado"
+            },
+            {
+                "id_solicitud":"03",
+                "fecha_solicitud":ISODate("2023-06-15T09:30:00Z"),
+                "formulario":
+                    [{
+                        "preguntas": "¿Está usted familiarizado con las responsabilidades de cuidar a una mascota?",
+                        "respuestas": "Sí, he investigado y comprendo las responsabilidades necesarias para cuidar a una mascota."
+                    },
+                    {  
+                        "preguntas": "¿Tiene usted un espacio adecuado para proporcionar un entorno seguro y cómodo para la mascota?",
+                        "respuestas": "Sí, cuento con un hogar espacioso y seguro donde la mascota pueda vivir cómodamente."
+
+                    },
+                    {
+                        "preguntas": "¿Está dispuesto a comprometerse con los cuidados veterinarios necesarios, como vacunaciones y chequeos regulares?",
+                        "respuestas": "Sí, estoy comprometido a brindar los cuidados veterinarios necesarios para mantener a la mascota sana y feliz."
+                    }], 
+                "estado":"Pendiente"
+            },
+        ],
     },
     {
         "id_usuario": 3, 
@@ -44,104 +200,195 @@ db.Usuarios.insertMany([
         "correo": "franco@gamil.com", 
         "numero_telefonico": 987654329, 
         "contraseña": "aegnboawd_13!", 
-        "mascotas": [
-            { "id_mascota": 1},{ "id_mascota": 2,},{"id_mascota": 3,}
-        ],
+        "direccion": [
+            {
+                "distrito": "Santa Cruz de Andamarca", 
+                "provincia": "Barranca", 
+                "departamento": "Lima", 
+                "mas_detalles": "Jirón Las Palmeras 789, Yurimaguas"
+            },
+            {
+                "distrito": "Pebas", 
+                "provincia": "Mariscal Ramón Castilla", 
+                "departamento": "Loreto", 
+                "mas_detalles": "Calle Los Tucanes 123, Santa Rosa"
+            },
+            {
+                "distrito": "Challabamba", 
+                "provincia": "Paucartambo", 
+                "departamento": "Cusco", 
+                "mas_detalles": "Calle Progreso 234, Requena"
+            }
+        ], 
+        
         "roles": [
-            { "id_rol": 2},{ "id_rol": 4}
+            "Adoptante", "Dueño Previo","ONG"
+        ],
+
+        "solicitudes": [
+            {
+                "id_solicitud":"01",
+                "fecha_solicitud":ISODate("2021-06-15T09:30:00Z"),
+                "formulario":
+                    [{
+                        "preguntas": "¿Está usted familiarizado con las responsabilidades de cuidar a una mascota?",
+                        "respuestas": "Sí, he investigado y comprendo las responsabilidades necesarias para cuidar a una mascota."
+                    },
+                    {  
+                        "preguntas": "¿Tiene usted un espacio adecuado para proporcionar un entorno seguro y cómodo para la mascota?",
+                        "respuestas": "Sí, cuento con un hogar espacioso y seguro donde la mascota pueda vivir cómodamente."
+
+                    },
+                    {
+                        "preguntas": "¿Está dispuesto a comprometerse con los cuidados veterinarios necesarios, como vacunaciones y chequeos regulares?",
+                        "respuestas": "Sí, estoy comprometido a brindar los cuidados veterinarios necesarios para mantener a la mascota sana y feliz."
+                    }],
+                "estado":"Aprobado"
+            },
+            {
+                "id_solicitud":"02",
+                "fecha_solicitud":ISODate("2022-06-15T09:30:00Z"),
+                "formulario":
+                    [{
+                        "preguntas": "¿Está usted familiarizado con las responsabilidades de cuidar a una mascota?",
+                        "respuestas": "Sí, he investigado y comprendo las responsabilidades necesarias para cuidar a una mascota."
+                    },
+                    {  
+                        "preguntas": "¿Tiene usted un espacio adecuado para proporcionar un entorno seguro y cómodo para la mascota?",
+                        "respuestas": "Sí, cuento con un hogar espacioso y seguro donde la mascota pueda vivir cómodamente."
+
+                    },
+                    {
+                        "preguntas": "¿Está dispuesto a comprometerse con los cuidados veterinarios necesarios, como vacunaciones y chequeos regulares?",
+                        "respuestas": "Sí, estoy comprometido a brindar los cuidados veterinarios necesarios para mantener a la mascota sana y feliz."
+                    }],
+                "estado":"Aprobado"
+            },
+            {
+                "id_solicitud":"03",
+                "fecha_solicitud":ISODate("2023-06-15T09:30:00Z"),
+                "formulario":
+                    [{
+                        "preguntas": "¿Está usted familiarizado con las responsabilidades de cuidar a una mascota?",
+                        "respuestas": "Sí, he investigado y comprendo las responsabilidades necesarias para cuidar a una mascota."
+                    },
+                    {  
+                        "preguntas": "¿Tiene usted un espacio adecuado para proporcionar un entorno seguro y cómodo para la mascota?",
+                        "respuestas": "Sí, cuento con un hogar espacioso y seguro donde la mascota pueda vivir cómodamente."
+
+                    },
+                    {
+                        "preguntas": "¿Está dispuesto a comprometerse con los cuidados veterinarios necesarios, como vacunaciones y chequeos regulares?",
+                        "respuestas": "Sí, estoy comprometido a brindar los cuidados veterinarios necesarios para mantener a la mascota sana y feliz."
+                    }], 
+                "estado":"Pendiente"
+            },
+        ],
+    }
+]);
+
+db.Donaciones.insertMany([
+    {
+        "id_donacion":1,
+        "id_usuario":1,
+        "tipo_donacion":[
+            {
+                "fecha":ISODate("2022-01-17T11:00:00Z"),
+                "descripcion":"Se realizo una donacion en efectivo",
+                "monto":"100$"
+            },
+            {
+                "fecha":ISODate("2022-06-17T11:00:00Z"),
+                "descripcion":"Se realizo una donacion en efectivo",
+                "monto":"50$"
+            },
+            {
+                "fecha":ISODate("2022-02-17T11:00:00Z"),
+                "descripcion":"Se realizo una donacion en efectivo",
+                "monto":"70$"
+            }
+    ]},
+    {
+        "id_donacion":2,
+        "id_usuario":2,
+        "tipo_donacion":[
+            {
+                "fecha":ISODate("2022-01-17T11:00:00Z"),
+                "descripcion":"Se realizo una donacion en efectivo",
+                "monto":"100$"
+            },
+            {
+                "fecha":ISODate("2022-03-17T11:00:00Z"),
+                "descripcion":"Se realizo una donacion en efectivo",
+                "monto":"50$"
+            },
+            {
+                "fecha":ISODate("2022-06-17T11:00:00Z"),
+                "descripcion":"Se realizo una donacion en efectivo",
+                "monto":"70$"
+            }
+    ]},
+    {
+        "id_donacion":3,
+        "id_usuario":3,
+        "tipo_donacion":[
+            {
+                "fecha":ISODate("2022-02-17T11:00:00Z"),
+                "descripcion":"Se realizo una donacion en efectivo",
+                "monto":"100$"
+            },
+            {
+                "fecha":ISODate("2022-04-17T11:00:00Z"),
+                "descripcion":"Se realizo una donacion en efectivo",
+                "monto":"50$"
+            },
+            {
+                "fecha":ISODate("2022-07-17T11:00:00Z"),
+                "descripcion":"Se realizo una donacion en efectivo",
+                "monto":"70$"
+            }
+    ]}
+
+]);
+
+db.Publicaciones.insertMany([
+    {
+        "id_publicacion":1,
+        "id_usuario":1,
+        "fecha":ISODate("2023-01-17T11:00:00Z"),
+        "contenido":"Estamos emocionados de presentar a nuestro nuevo cachorro, Max! Es un adorable Labrador Retriever, es juguetón, cariñoso y le encanta explorar su entorno.",
+        "respuestas": [
+            "¡Felicidades por la llegada de Max! Se ve absolutamente encantador en la foto.",
+            "¡Qué hermoso cachorro! Los Labradores son conocidos por su amabilidad y su disposición para jugar.",
+            "¡No puedo resistir esa carita! Max es tan lindo."
+        ]
+    },
+    {
+        "id_publicacion":2,
+        "id_usuario":2,
+        "fecha":ISODate("2023-02-17T11:00:00Z"),
+        "contenido":"Queremos compartir con todos ustedes la llegada de nuestro nuevo gatito, Luna. Es una gatita de 3 meses de edad con un pelaje suave y hermosos ojos verdes. Luna es juguetona, curiosa y muy cariñosa.",
+        "respuestas": [
+            "¡Felicidades por la llegada de Luna! Los gatos son compañeros maravillosos.",
+            "¡Qué belleza de gatita! Los gatos son conocidos por su curiosidad y su personalidad independiente.",
+            "¡Bienvenida, Luna! Los gatos son animales fascinantes y llenos de misterio."
+        ]
+
+    },
+    {
+        "id_publicacion":3,
+        "id_usuario":3,
+        "fecha":ISODate("2023-03-17T11:00:00Z"),
+        "contenido":"¡Queremos presentarles a nuestro adorable conejito, Caramel! Caramel tiene 4 meses de edad y es una bolita de pelo suave y esponjoso. Es curioso, juguetón y le encanta saltar por todos lados.",
+        "respuestas": [
+            "¡Felicidades por la llegada de Caramel! Los conejos son mascotas adorables y llenas de energía.",
+            "¡Qué lindo conejito! Es maravilloso tener una mascota tan esponjosa.",
+            "¡No puedo evitar sonreír al ver a Caramel! Los conejos pueden ser tan divertidos y llenos de vida."
         ]
     }
 ]);
 
-db.Ubicacion.insertMany([
-    {
-        "id_ubicacion": 1,
-        "id_usuario": 1,
-        "distrito": "Santa Cruz de Andamarca", 
-        "provincia": "Barranca", 
-        "departamento": "Lima", 
-        "mas_detalles": "Jirón Las Palmeras 789, Yurimaguas"
-    },
-    {
-        "id_ubicacion": 2,
-        "id_usuario": 2,
-        "distrito": "Pebas", 
-        "provincia": "Mariscal Ramón Castilla", 
-        "departamento": "Loreto", 
-        "mas_detalles": "Calle Los Tucanes 123, Santa Rosa"
-    },
-    {
-        "id_ubicacion": 3,
-        "id_usuario": 3,
-        "distrito": "Challabamba", 
-        "provincia": "Paucartambo", 
-        "departamento": "Cusco", 
-        "mas_detalles": "Calle Progreso 234, Requena"
-    }
-])
-
-db.Roles.insertMany([
-    {   
-        "id_rol": 1,
-        "nombre_rol":"Dueño Previo"
-    },
-    {
-        "id_rol": 2,
-        "nombre_rol":"Refugio de animales"
-    },
-    {
-        "id_rol": 3,
-        "nombre_rol":"Organización de rescate de animales"
-    },
-    {
-        "id_rol": 4,
-        "nombre_rol":"Adoptante"
-    }
-])
-
-db.Formulario_Adopcion.insertMany([
-    {
-        "id_formulario": 1,
-        "preguntas": "¿Está usted familiarizado con las responsabilidades de cuidar a una mascota?",
-        "respuestas": "Sí, he investigado y comprendo las responsabilidades necesarias para cuidar a una mascota."
-    },
-    {
-        "id_formulario": 2,
-        "preguntas": "¿Tiene usted un espacio adecuado para proporcionar un entorno seguro y cómodo para la mascota?",
-        "respuestas": "Sí, cuento con un hogar espacioso y seguro donde la mascota pueda vivir cómodamente."
-    },
-    {
-        "id_formulario": 3,
-        "preguntas": "¿Está dispuesto a comprometerse con los cuidados veterinarios necesarios, como vacunaciones y chequeos regulares?",
-        "respuestas": "Sí, estoy comprometido a brindar los cuidados veterinarios necesarios para mantener a la mascota sana y feliz."
-    }
-])
-
-db.Solicitudes_Adopción.insertMany([
-    {
-        "id_solicitud": 1,
-        "id_usuario": 1,
-        "id_formulario": 1 ,
-        "fecha_solicitud": ISODate("2023-06-15T09:30:00Z"),
-        "estado_actual": "aprobada"
-    },
-    {
-        "id_solicitud": 2,
-        "id_usuario": 2,
-        "id_formulario": 2 ,
-        "fecha_solicitud": ISODate("2023-06-15T09:30:00Z"),
-        "estado_actual": "aprobada"
-    },
-    {
-        "id_solicitud": 3,
-        "id_usuario":3 ,
-        "id_formulario": 3 ,
-        "fecha_solicitud": ISODate("2023-06-15T09:30:00Z"),
-        "estado_actual": "aprobada"
-    }
-])
 // ------------------------------------- MASCOTAS ------------------------------------------
-
 
 db.Mascotas.insertMany([
     {
@@ -149,11 +396,29 @@ db.Mascotas.insertMany([
         "nombre": "Luna", 
         "edad": 3, 
         "origen": "Criado por Breeder", 
-        "tamaño": 46    , 
+        "tamaño": 46, 
         "descripción": "Luna es una encantadora Labrador Retriever de pelaje negro. Tiene tres años de edad y es una hembra muy cariñosa y juguetona. Es de tamaño mediano y tiene una personalidad amigable. Le encanta pasear y jugar en el parque.", 
         "imagen": "mascota1.jpge",
-        "id_especie": 1 ,
-        "id_raza": 1 ,
+        "especie":"Perro",
+        "raza": "Labrador Retriever",
+        "estado_actual":"Actualmente se encuentra bien de salud",
+        "historial_medico":[
+            {
+                "fecha_diagnostico": ISODate("2022-01-17T11:00:00Z"),
+                "descripcion_tratamiento": "El perro recibió medicación para tratar una infección intestinal.",
+                "vacunas":["Vacuna A","Vacuna B","Vacuna C"],
+            },
+            {
+                "fecha_diagnostico": ISODate("2022-05-17T11:00:00Z"),
+                "descripcion_tratamiento": "El perro recibió medicación para tratar una infección de pulgas.",
+                "vacunas":["Vacuna D","Vacuna E","Vacuna F"],
+            },
+            {
+                "fecha_diagnostico": ISODate("2022-08-17T11:00:00Z"),
+                "descripcion_tratamiento": "El perro recibió medicación para tratar una fractura en la pata.",
+                "vacunas":["Vacuna G","Vacuna H","Vacuna I"],
+            }
+        ]
     },
     {
         "id_mascota": 2, 
@@ -163,8 +428,26 @@ db.Mascotas.insertMany([
         "tamaño": 31, 
         "descripción": "Simba es un impresionante gato Maine Coon de dos años de edad. Tiene un pelaje largo y suave en tonos de naranja y blanco. Es un macho muy tranquilo y afectuoso. A pesar de su gran tamaño, es juguetón y le gusta descansar en lugares altos.", 
         "imagen": "mascota2.jpge",
-        "id_especie":2 ,
-        "id_raza": 2,
+        "especie":"Gato",
+        "raza": "Maine Coon",
+        "estado_actual":"Actualmente se encuentra bien de salud",
+        "historial_medico":[
+            {
+                "fecha_diagnostico": ISODate("2021-02-17T11:00:00Z"),
+                "descripcion_tratamiento": "El gato recibió una operacion para tratar una hernia.",
+                "vacunas":["Vacuna J","Vacuna K","Vacuna K"],
+            },
+            {
+                "fecha_diagnostico": ISODate("2021-04-17T11:00:00Z"),
+                "descripcion_tratamiento": "El gato recibió medicación para tratar una infección en el estomago.",
+                "vacunas":["Vacuna M","Vacuna N","Vacuna Ñ"],
+            },
+            {
+                "fecha_diagnostico": ISODate("2021-07-17T11:00:00Z"),
+                "descripcion_tratamiento": "El gato recibió medicación para tratar una fractura en la pata.",
+                "vacunas":["Vacuna O","Vacuna P","Vacuna Q"],
+            }
+        ]
     },
     {
         "id_mascota": 3, 
@@ -174,104 +457,28 @@ db.Mascotas.insertMany([
         "tamaño": 51, 
         "descripción": "Kiara es un adorable conejo Holandés Enano de un año de edad. Tiene un pelaje suave en tonos de marrón y blanco. Es una hembra muy curiosa y activa. A pesar de su tamaño pequeño, le encanta explorar y saltar por el jardín. Es una mascota ideal para familias con niños.", 
         "imagen": "mascota3.jpge",
-        "id_especie":3 ,
-        "id_raza":3 ,
-
+        "especie":"Conejo",
+        "raza": "Conejo Holandés",
+        "estado_actual":"Actualmente se encuentra bien de salud",
+        "historial_medico":[
+            {
+                "fecha_diagnostico": ISODate("2020-01-17T11:00:00Z"),
+                "descripcion_tratamiento": "El conejo recibió medicación para tratar una infección en la piel.",
+                "vacunas":["Vacuna R","Vacuna S","Vacuna T"],
+            },
+            {
+                "fecha_diagnostico": ISODate("2020-03-17T11:00:00Z"),
+                "descripcion_tratamiento": "El conejo recibió medicación para tratar la coccidiosis .",
+                "vacunas":["Vacuna U","Vacuna V","Vacuna W"],
+            },
+            {
+                "fecha_diagnostico": ISODate("2020-09-17T11:00:00Z"),
+                "descripcion_tratamiento": "El conejo recibió medicación para tratar Neumonía.",
+                "vacunas":["Vacuna X","Vacuna Y","Vacuna Z"],
+            }
+        ]
     }
 ]);
-
-db.Especies_Mascotas.insertMany([
-
-    {
-        "id_especie": 1 ,
-        "nombre_especie": "Perros"
-    },
-    {
-        "id_especie": 2 ,
-        "nombre_especie": "Gatos"
-    },
-    {
-        "id_especie": 3 ,
-        "nombre_especie": "Conejos"
-    }
-])
-
-db.Razas_Mascotas.insertMany([
-    {
-        "id_raza": 1 ,
-        "nombre_raza": "Labrador Retriever"
-    },
-    {
-        "id_raza": 2 ,
-        "nombre_raza": "Maine Coon"
-    },
-    {
-        "id_raza": 3 ,
-        "nombre_raza": "Conejo Holandés"
-    }
-])
-
-db.Historial_Medico.insertMany([  // ELIMINAR Y HACER REFERENCIA DE UNO A MUCHOS
-    {
-      "id_historial": 1,
-      "id_mascota": 1,
-      "id_vacuna": 1,
-      "id_condiciones_medicas": 1,
-      "fecha_diagnostico": ISODate("2023-06-17T11:00:00Z"),
-      "descripcion_tratamiento": "El perro recibió medicación para tratar una infección respiratoria."
-    },
-    {
-      "id_historial": 2,
-      "id_mascota": 2,
-      "id_vacuna": 2,
-      "id_condiciones_medicas": 2,
-      "fecha_diagnostico": ISODate("2023-06-17T11:00:00Z"),
-      "descripcion_tratamiento": "El gato fue sometido a una cirugía para corregir una fractura en una pata."
-    },
-    {
-      "id_historial": 3,
-      "id_mascota": 3,
-      "id_vacuna": 3,
-      "id_condiciones_medicas": 2,
-      "fecha_diagnostico": ISODate("2023-06-17T11:00:00Z"),
-      "descripcion_tratamiento": "El conejo recibió terapia física para rehabilitar una lesión en la columna vertebral."
-    }
-])
-
-db.Condiciones_Medicas.insertMany([
-    {
-        "id_condiciones_medicas": 1,
-        "descripcion": "Actualmente se encuentra bien de salud"
-    },
-    {
-        "id_condiciones_medicas": 2,
-        "descripcion": "Actualmente se encuentra recuperado totalmente de la fractura"
-    },
-    {
-        "id_condiciones_medicas": 3,
-        "descripcion": "Actualmente se encuentra recuperado totalmente de la lesion"
-    }
-
-])
-  
-db.Vacunas_Mascotas.insertMany([
-    {
-        "id_vacuna": 1,
-        "nombre_vacuna": "Vacuna A",
-        "fecha_vacunacion": ISODate("2023-06-15T09:30:00Z")
-    },
-    {
-        "id_vacuna": 2,
-        "nombre_vacuna": "Vacuna B",
-        "fecha_vacunacion": ISODate("2023-06-16T14:45:00Z")
-    },
-    {
-        "id_vacuna": 3,
-        "nombre_vacuna": "Vacuna C",
-        "fecha_vacunacion": ISODate("2023-06-17T11:00:00Z")
-    }
-])
-
 
 
 

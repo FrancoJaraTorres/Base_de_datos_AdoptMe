@@ -9,7 +9,8 @@ db.createCollection("Usuarios", {
         $jsonSchema: 
         {
             bsonType: "object",
-            required: ["id_usuario", "nombres", "apellido_paterno", "apellido_materno", "DNI", "correo", "numero_telefonico", "contraseña", "mascotas", "roles"],
+            required: ["id_usuario", "nombres", "apellido_paterno","apellido_materno", "DNI", "correo", "numero_telefonico", 
+            "contraseña","direccion","roles","solicitudes"],
             properties: {
               id_usuario: {
                 bsonType: "int",
@@ -50,13 +51,17 @@ db.createCollection("Usuarios", {
                 bsonType: "string",
                 description: "Contraseña del usuario"
               },
-              mascotas: {
-                bsonType: "array",
-                description: "Arreglo de mascotas"
-              },
-              roles: {
+              direccion: {
+               bsonType: "array",
+               description: "Arreglo de ubicaciones"
+             },
+             roles: {
                bsonType: "array",
                description: "Arreglo de roles"
+             },
+             solicitudes: {
+               bsonType: "array",
+               description: "Arreglo de solicitudes"
              }
             }
         }
@@ -64,124 +69,81 @@ db.createCollection("Usuarios", {
     }
 });
 
-
-db.createCollection("Ubicacion", {
-    validator: {
-       $jsonSchema: {
-          bsonType: "object",
-          required: ["id_ubicacion","id_usuario", "distrito", "provincia", "departamento", "mas_detalles"],
-          properties: {
-             id_ubicacion: {
-                bsonType: "int",
-                description: "ID de la ubicacion"
+db.createCollection("Donaciones", {
+   validator: {
+       $jsonSchema: 
+       {
+           bsonType: "object",
+           required: ["id_donacion", "id_usuario", "tipo_donacion"],
+           properties: {
+            id_donacion: {
+               bsonType: "int",
+               description: "ID de la donacion"
              },
              id_usuario: {
                bsonType: "int",
                description: "ID del usuario"
-            },
-             distrito: {
-                bsonType: "string",
-                maxLength: 50,
-                description: "Distrito"
              },
-             provincia: {
-                bsonType: "string",
-                maxLength: 50,
-                description: "Provincia"
-             },
-             departamento: {
-                bsonType: "string",
-                maxLength: 50,
-                description: "Departamento"
-             },
-             mas_detalles: {
-                bsonType: "string",
-                maxLength: 50,
-                description: "Referencias"
-             }
-          }
-       }
-    }
-}); 
-
-
-db.createCollection("Roles", {
-    validator: {
-       $jsonSchema: {
-          bsonType: "object",
-          required: ["id_rol", "nombre_rol"],
-          properties: {
-             id_ubicacion: {
-                bsonType: "int",
-                description: "ID del rol"
-             },
-             distrito: {
-                bsonType: "string",
-                maxLength: 20,
-                description: "nombre_rol"
-             }
-          }
-       }
-    }
-}); 
-
-db.createCollection("Formulario_Adopcion", {
-   validator: {
-      $jsonSchema: {
-         bsonType: "object",
-         required: ["id_formulario", "preguntas", "respuestas"],
-         properties: {
-            id_formulario: {
-               bsonType: "int",
-               description: "El ID del formulario debe ser un entero."
-            },
-            preguntas: {
-               bsonType: "string",
-               description: "Las preguntas deben ser una cadena de caracteres.",
-               maxLength: 1000
-            },
-            respuestas: {
-               bsonType: "string",
-               description: "Las respuestas deben ser una cadena de caracteres.",
-               maxLength: 1000
+             tipo_donacion: {
+               bsonType: "array",
+               description: "Arreglo de donaciones",
+               items: {
+                  bsonType: "object",
+                  required: ["fecha", "descripcion", "monto"],
+                  properties: {
+                      fecha: {
+                          bsonType: "date",
+                          description: "Fecha de la donación"
+                      },
+                      descripcion: {
+                          bsonType: "string",
+                          description: "Descripción de la donación"
+                      },
+                      monto: {
+                          bsonType: "string",
+                          description: "Monto de la donación"
+                      }
+                     }
+                  }
             }
          }
-      }
+         
+      }   
    }
-})
+});
 
-db.createCollection("Solicitudes_Adopción", {
+db.createCollection("Publicaciones", {
    validator: {
-      $jsonSchema: {
-         bsonType: "object",
-         required: ["id_solicitud", "id_usuario", "id_formulario", "fecha_solicitud", "estado_actual"],
-         properties: {
-            id_solicitud: {
+       $jsonSchema: 
+       {
+           bsonType: "object",
+           required: ["id_publicacion", "id_usuario","fecha", "contenido","respuestas"],
+           properties: {
+            id_publicacion: {
                bsonType: "int",
-               description: "ID de la solicitud"
-            },
-            id_usuario: {
+               description: "ID de Publicacion"
+             },
+             id_usuario: {
                bsonType: "int",
-               description: "ID del usuario"
-            },
-            id_formulario: {
-               bsonType: "int",
-               description: "ID del formulario"
-            },
-            fecha_solicitud: {
+               description: "id del usuario"
+             },
+             fecha: {
                bsonType: "date",
-               description: "Fecha de la solicitud"
-            },
-            estado_actual: {
+               description: "Fecha de la publicacion"
+           },
+             contenido: {
                bsonType: "string",
-               description: "Estado actual de la solicitud",
-               enum: ["pendiente", "aprobada", "rechazada"]
-            }
-         }
-      }
+               description: "contenido de la publicacion"
+             },
+             respuestas: {
+               bsonType: "array",
+               description: "respuestas a la publicacion"
+             }
+           }
+       }
+       
    }
-})
-
+});
  // ------------------------------------- MASCOTAS ------------------------------------------
 
 db.createCollection("Mascotas", {
@@ -189,7 +151,9 @@ db.createCollection("Mascotas", {
         $jsonSchema: 
         {
             bsonType: "object",
-            required: ["id_mascota", "nombre", "edad", "origen", "tamaño", "descripción", "imagen", "id_especie", "id_raza"],
+            required: ["id_mascota", "nombre", "edad", "origen", "tamaño", "descripción", "imagen", 
+            "especie", "raza","estado_actual", "historial_medico"],
+            
             properties: {
               id_mascota: {
                 bsonType: "int",
@@ -222,138 +186,26 @@ db.createCollection("Mascotas", {
                 bsonType: "string",
                 description: "Imagen de la mascota"
               },
-              id_especie: {
-               bsonType: "int",
+              especie: {
+               bsonType: "string",
                description: "Especie de la Mascota"
              },
-             id_raza: {
-               bsonType: "int",
+             raza: {
+               bsonType: "string",
                description: "Raza de la Mascota"
+             },
+             estado_actual: {
+               bsonType: "string",
+               description: "Estado actual de la mascota"
+             },
+             historial_medico: {
+               bsonType: "array",
+               description: "Array del Historial medico de la mascota"
              }
             }
         }        
         
     }
 });
-
-db.createCollection("Especies_Mascotas", {
-    validator: {
-       $jsonSchema: {
-          bsonType: "object",
-          required: ["id_especie", "nombre_especie"],
-          properties: {
-             id_especie: {
-                bsonType: "int",
-                description: "ID de la especie"
-             },
-             nombre_especie: {
-                bsonType: "string",
-                maxLength: 300,
-                description: "Nombre de la especie"
-             }
-          }
-       }
-    }
-}); 
-
-db.createCollection("Razas_Mascotas", {
-    validator: {
-       $jsonSchema: {
-          bsonType: "object",
-          required: ["id_raza", "nombre_raza"],
-          properties: {
-             id_raza: {
-                bsonType: "int",
-                description: "ID de la raza"
-             },
-             nombre_raza: {
-                bsonType: "string",
-                maxLength: 300,
-                description: "Nombre de la raza"
-             }
-          }
-       }
-    }
-}); 
- 
-db.createCollection("Historial_Medico", {
-   validator: {
-      $jsonSchema: {
-         bsonType: "object",
-         required: ["id_historial", "id_mascota", "id_vacuna", "id_condiciones_medicas", "fecha_diagnostico", "descripcion_tratamiento"],
-         properties: {
-            id_historial: {
-               bsonType: "int",
-               description: "ID del historial medico"
-            },
-            id_mascota: {
-               bsonType: "int",
-               description: "ID de la mascota"
-            },
-            id_vacuna: {
-               bsonType: "int",
-               description: "ID de la vacuna"
-            },
-            id_condiciones_medicas: {
-               bsonType: "int",
-               description: "ID de las condiciones medicas"
-            },
-            fecha_diagnostico: {
-               bsonType: "date",
-               description: "Fecha del diagnosticos"
-            },
-            descripcion_tratamiento: {
-               bsonType: "string",
-               maxLength: 20000,
-               description: "Descripcion del tratamiento"
-            }
-         }
-      }
-   }
-})
-
-db.createCollection("Condiciones_Medicas", {
-   validator: {
-      $jsonSchema: {
-         bsonType: "object",
-         required: ["id_condiciones_medicas", "descripcion"],
-         properties: {
-            id_condiciones_medicas: {
-               bsonType: "int",
-               description: "ID de la condicion medica"
-            },
-            descripcion: {
-               bsonType: "string",
-               description: "La descripción debe ser una cadena de caracteres.",
-               maxLength: 100
-            }
-         }
-      }
-   }
-})
-
-db.createCollection("Vacunas_Mascotas", {
-   validator: {
-      $jsonSchema: {
-         bsonType: "object",
-         required: ["id_vacuna", "nombre_vacuna", "fecha_vacunacion"],
-         properties: {
-            id_vacuna: {
-               bsonType: "int",
-               description: "ID de la vacuna, entero"
-            },
-            nombre_vacuna: {
-               bsonType: "string",
-               maxLength: 20,
-               description: "Nombre de la vacuna"
-            },
-            fecha_vacunacion: {
-               bsonType: "date",
-               description: "Fecha de vacunación"
-            }
-         }
-      }
-   }
-})
 
 
