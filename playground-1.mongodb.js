@@ -53,7 +53,29 @@ db.createCollection("Usuarios", {
               },
               direccion: {
                bsonType: "array",
-               description: "Arreglo de ubicaciones"
+               description: "Arreglo de ubicaciones",
+               items: {
+                  bsonType: "object",
+                  required: ["distrito", "provincia", "departamento", "mas_detalles"],
+                  properties: {
+                     distrito: {
+                          bsonType: "string",
+                          description: "Distrito del usuario"
+                      },
+                      provincia: {
+                          bsonType: "string",
+                          description: "provincia del usuario"
+                      },
+                      departamento: {
+                          bsonType: "string",
+                          description: "departamento del usuario"
+                      },
+                      mas_detalles: {
+                        bsonType: "string",
+                        description: "Mas detalles acerca de la direccion del usuario"
+                    }
+                  }
+               }
              },
              roles: {
                bsonType: "array",
@@ -61,12 +83,43 @@ db.createCollection("Usuarios", {
              },
              solicitudes: {
                bsonType: "array",
-               description: "Arreglo de solicitudes"
+               description: "Arreglo de solicitudes",
+               items: {
+                  bsonType: "object",
+                  required: ["fecha_solicitud", "formulario", "estado"],
+                  properties: {
+                      fecha_solicitud: {
+                          bsonType: "date",
+                          description: "provincia del usuario"
+                      },
+                      formulario: {
+                          bsonType: "array",
+                          description: "departamento del usuario", 
+                          items: {
+                           bsonType: "object",
+                           required: ["preguntas", "respuestas"],
+                           properties: {
+                              preguntas: {
+                                   bsonType: "string",
+                                   description: "provincia del usuario"
+                               },
+                               respuestas: {
+                                 bsonType: "string",
+                                 description: "provincia del usuario"
+                             }
+                      },
+
+                    }
+                  }, estado: {
+                     bsonType: "string",
+                     description: "Estado de la solicitud (Pendiente-Aprobado-Desaprobado)"
+               }
              }
             }
         }
-        
-    }
+      }
+   } 
+ }
 });
 
 db.createCollection("Donaciones", {
@@ -200,7 +253,25 @@ db.createCollection("Mascotas", {
              },
              historial_medico: {
                bsonType: "array",
-               description: "Array del Historial medico de la mascota"
+               description: "Array del Historial medico de la mascota",
+               items: {
+                  bsonType: "object",
+                  required: ["fecha_diagnostico", "descripcion_tratamiento", "vacunas"],
+                  properties: {
+                     fecha_diagnostico: {
+                          bsonType: "date",
+                          description: "Fecha del diagnostico"
+                      },
+                      descripcion_tratamiento: {
+                          bsonType: "string",
+                          description: "Descripcion del tratamiento"
+                      },
+                      vacunas: {
+                          bsonType: "array",
+                          description: "Vacunas colocadas a la mascota"
+                      }
+                  }
+               }
              }
             }
         }        

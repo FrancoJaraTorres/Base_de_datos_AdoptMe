@@ -39,7 +39,6 @@ db.Usuarios.insertMany([
 
         "solicitudes": [
             {
-                "id_solicitud":"01",
                 "fecha_solicitud":ISODate("2021-06-15T09:30:00Z"),
                 "formulario":
                     [{
@@ -58,7 +57,6 @@ db.Usuarios.insertMany([
                 "estado":"Aprobado"
             },
             {
-                "id_solicitud":"02",
                 "fecha_solicitud":ISODate("2022-06-15T09:30:00Z"),
                 "formulario":
                     [{
@@ -77,7 +75,6 @@ db.Usuarios.insertMany([
                 "estado":"Aprobado"
             },
             {
-                "id_solicitud":"03",
                 "fecha_solicitud":ISODate("2023-06-15T09:30:00Z"),
                 "formulario":
                     [{
